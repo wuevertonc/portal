@@ -1,0 +1,31 @@
+body {
+    background-color: #1a1a2e; /* Fundo escuro */
+    color: #ffffff;           /* Texto claro */
+    font-family: 'Arial', sans-serif;
+  }
+
+  header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  header h1 {
+    font-family: 'Courier New', monospace;
+    font-size: 4rem;
+    color: #ffcc00;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  header .icon {
+    font-size: 5rem;
+    color: #e94560;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #cccccc;
+  }

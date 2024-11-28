@@ -1,0 +1,36 @@
+<a routerLink="/comentario" class="btn btn-primary left">Voltar</a>
+
+<form class="form" [formGroup]="form">
+
+  <div class="mb-3">
+    <label for="id">ID</label>
+    <input id="id" type="text" class="form-control" placeholder="ID" [formControl]="form.controls.id" readonly />
+  </div>
+
+  <div class="mb-3">
+    <label for="usuario">Usuário</label>
+    <input id="usuario" type="text" class="form-control" placeholder="Usuário" [formControl]="form.controls.usuario" readonly />
+  </div>
+
+  <div class="mb-3">
+    <label for="noticia">Notícia</label>
+    <input id="noticia" type="text" class="form-control" placeholder="Notícia" [formControl]="form.controls.noticia" readonly />
+  </div>
+
+  <div class="mb-3">
+    <label for="texto">Texto</label>
+    <select id="texto" class="form-control" [formControl]="form.controls.texto">
+      <option *ngFor="let item of comentario$" [value]="item.texto">
+        {{ item.texto }}
+      </option>
+    </select>
+  </div>
+
+  <br />
+
+  <div class="clearfix"></div>
+
+  <div class="container-fluid d-flex justify-content-end">
+    <button class="btn btn-primary float-right" (click)="salvar()">Salvar</button>
+  </div>
+</form>

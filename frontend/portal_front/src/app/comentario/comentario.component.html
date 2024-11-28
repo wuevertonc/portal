@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Usuário</th>
+        <th scope="col">Comentário</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of comentario$">
+        <th>{{ cat.id }}</th>
+        <th>{{ cat.usuario }}</th>  <!-- Aqui você deve garantir que a propriedade é 'usuario' e não 'Usuario' -->
+        <th>{{ cat.texto }}</th>
+        <th>
+          <a (click)="editar(cat.id)" class="btn btn-primary">Editar</a>&nbsp;
+          <a (click)="remover(cat.id)" class="btn btn-danger">Excluir</a>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  

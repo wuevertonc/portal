@@ -1,0 +1,17 @@
+.linkNoticia{
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.linkNoticia:hover{
+    text-decoration: underline;
+}
+
+.listaNoticias img{
+    max-width: 200px;
+  
+}
+.ultimaNoticia img{
+    max-width: 1000px;
+}

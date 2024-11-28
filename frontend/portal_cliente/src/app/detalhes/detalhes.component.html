@@ -1,0 +1,51 @@
+<div class="noticia-detalhes">
+    <h4>{{ noticia?.titulo }}</h4>
+    <img
+    *ngIf="noticia?.imagemUrl"
+    [src]="noticia?.imagemUrl"
+    alt="Imagem da notícia"
+    class="img-fluid rounded mx-auto d-block"
+    style="max-width: 30%; border-radius: 15px;"
+  />
+    <p>{{ noticia?.corpo }}</p>
+    <p>{{ noticia?.categoria }}</p>
+    
+  </div>
+
+  <div class="comentarios-detalhes">
+    <h4>{{ noticia?.comentario }}</h4>
+    
+  </div>
+
+<div class="comentarios mt-4">
+  <h5>Comentários:</h5>
+  <div *ngIf="comentarios.length > 0; else semComentarios">
+    <ul class="list-group">
+      <li *ngFor="let comentario of comentarios" class="list-group-item">
+        <strong>{{ comentario.usuario?.pessoa?.nome || 'Anônimo' }}</strong>: 
+        {{ comentario.texto || 'Sem texto' }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #semComentarios>
+    <p class="text-muted">Nenhum comentário encontrado.</p>
+  </ng-template>
+</div>
+<!--
+ Formulário de Novo Comentário 
+<div class="mt-4">
+  <h5>Adicionar Comentário:</h5>
+  <form (ngSubmit)=" adicionarComentario()" #comentarioForm="ngForm">
+    <div class="mb-3">
+      <textarea
+        [(ngModel)]="novoComentario"
+        name="comentario"
+        class="form-control"
+        rows="3"
+        placeholder="Escreva seu comentário aqui..."
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!comentarioForm.valid">Enviar Comentário</button>
+  </form>
+</div>-->
